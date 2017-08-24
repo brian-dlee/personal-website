@@ -1,0 +1,23 @@
+.ContactCard h2 {
+  color: white;
+  text-align: center;
+}
+
+.ContactCard .content .title {
+  margin: 0;
+}
+
+.ContactCard .content {
+  text-align: center;
+}
+
+.ContactCard .profileImage {
+  margin-bottom: 1em;
+}
+
+
+.ContactCard .ui.horizontal.list.socialLinks {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+}

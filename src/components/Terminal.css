@@ -6,6 +6,12 @@
   box-sizing: border-box;
 }
 
+.Terminal .logo {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
 .Terminal > .ui.segment.inverted {
   color: '#81b3b9';
   border-radius: 2px;  

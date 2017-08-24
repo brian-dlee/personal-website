@@ -1,62 +1,60 @@
 import React from 'react';
-import { Card, Icon, Image, List } from 'semantic-ui-react';
+import { Divider, Icon, Image, Segment, Label } from 'semantic-ui-react';
 
-const gravatarSrc = 'https://www.gravatar.com/avatar/83b4095979413f8886a5197b8b692bdf?s=400&r=pg'
+import SocialMediaList from './SocialMediaList';
+
+import './ContactCard.css';
+
+const gravatarSrc = 'https://www.gravatar.com/avatar/83b4095979413f8886a5197b8b692bdf?s=400&r=pg';
 
 export default class ContactCard extends React.Component {
   render() {
     return (
-      <Card centered raised>
-      <Image 
-        centered
-        src={gravatarSrc} 
-        className="profileImage" 
-        alt="Headshot" />
-      <Card.Content>
-        <Card.Header>
-          Brian Lee
-        </Card.Header>
-        <Card.Description>
+      <div className="ContactCard">
+        <h2>Brian Lee</h2>
+        <Image
+          shape="circular"
+          centered
+          src={gravatarSrc}
+          className="profileImage"
+          alt="Headshot" />
+        <SocialMediaList
+          items={{
+            twitter: {
+              url: "https://twitter.com/brian_dlee",
+              popup: "@brian_dlee"
+            },
+            github: {
+              url: "https://github.com/brian-dlee",
+              popup: "@brian-dlee"
+            },
+            gitlab: {
+              url: "https://gitlab.com/briandlee",
+              popup: "@briandlee"
+            },
+            'mail outline': {
+              url: "mailto:briandl92391@gmail.com",
+              popup: "briandl92391@gmail.com"
+            },
+          }} />
+        <Segment className="content">
+          <h3 className="title">Software Engineer</h3>
+          <div className="title">
+            <Label size="large" className="title">
+              <Icon name="star" /> Javascript + React
+            </Label>
+          </div>
+          <Divider />
           <p>
-            <Icon name="star" /> Javascript + React
+            <small>
+              Lately, my focus has been
+              PWA development using React, but I'm looking forward to
+              getting more involved cutting-edge web technologies
+              like AI and applications using WebGL.
+            </small>
           </p>
-          <p><strong>Areas I'd love to explore further</strong></p>
-          <p>
-            AI and Game Development
-          </p>
-
-        </Card.Description>
-      </Card.Content>
-      <Card.Content extra>
-        <List>
-          <List.Item>
-            <a href="https://twitter.com/brian_dlee">
-              <Icon name="twitter" /> brian_dlee
-            </a>
-          </List.Item>
-          <List.Item>
-            <a href="https://github.com/brian-dlee">
-              <Icon name="github" /> brian-dlee
-            </a>
-          </List.Item>
-          <List.Item>
-            <a href="https://gitlab.com/briandlee">
-              <Icon name="gitlab" /> briandlee
-            </a>
-          </List.Item>
-          <List.Item>
-            <a href="mailto:briandl92391@gmail.com">
-              <Icon name="mail outline" /> briandl92391@gmail.com
-            </a>
-          </List.Item>
-          <List.Item>
-            <a href="tel:7757647149">
-              <Icon name="phone" /> (775) 764-7149
-            </a>
-          </List.Item>
-        </List>
-      </Card.Content>
-    </Card>
+        </Segment>
+      </div>
     );
   }
 }
