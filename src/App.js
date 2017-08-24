@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
-import { Container } from 'semantic-ui-react';
+import { Container, Grid } from 'semantic-ui-react';
+import ContactCard from './components/ContactCard';
 import Terminal from './components/Terminal';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <Container className="App-header-wrap">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>Welcome to React</h2>
-          </Container>
-        </div>
         <Container className="App-body">
-          <Terminal className="App-container" inverted raised>
-            {'Hello!\nTesting'}
-          </Terminal>
+          <Grid>
+            <Grid.Column width={4}>
+              <ContactCard />
+            </Grid.Column>
+            <Grid.Column width={12}>
+              <Terminal inverted raised>
+                {'Hello!\nTesting\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA'}
+              </Terminal>
+            </Grid.Column>
+          </Grid>
         </Container>
       </div>
     );

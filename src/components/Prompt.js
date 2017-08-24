@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import { Icon } from 'semantic-ui-react';
 
+import { colors } from './Terminal';
+
 class Prompt extends Component {
   render() {
-    const grey = '#818181';
-    const yellow = '#bbba30';
-
-    const lb = <code style={{color:grey}}>[</code>;
-    const mid = <code style={{color:yellow}}>brian.lee</code>;
-    const rb = <code style={{color:grey}}>]</code>;
+    const promptSymbol = <Icon style={{color: colors.blue}} name="angle right"/>
 
     return (
       <code>
-        {lb}{mid}{rb}<Icon name="angle right"/>
+        {promptSymbol}
       </code>
     );
   }

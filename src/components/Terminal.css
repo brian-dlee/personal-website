@@ -1,0 +1,20 @@
+.Terminal {
+  /* margin-top: 2em; */
+  border-radius: 2px;
+  border: 2px solid #12141c;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.Terminal > .ui.segment.inverted {
+  color: '#81b3b9';
+  border-radius: 2px;  
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#12141c+0,000000+100 */
+  background: #0B0C10; /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  #0B0C10 0%, #000000 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  #0B0C10 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  #0B0C10 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0B0C10', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  height: 100%;
+  overflow-y: auto;
+}
