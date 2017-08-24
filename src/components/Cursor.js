@@ -6,7 +6,7 @@ class Cursor extends Component {
       color: '#fefefe'
     };
 
-    return <code className="cursor" style={style}>█</code>
+    return <code className="cursor" style={style} />
   }
 }
 

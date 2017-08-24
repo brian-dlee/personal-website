@@ -13,7 +13,7 @@
 }
 
 .Terminal > .ui.segment.inverted {
-  color: '#81b3b9';
+  color: #81b3b9;
   border-radius: 2px;  
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#12141c+0,000000+100 */
   background: #0B0C10; /* Old browsers */
@@ -23,4 +23,29 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0B0C10', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
   height: 100%;
   overflow-y: auto;
+}
+
+.Terminal > .ui.segment.inverted > .ui.list > .navItem {
+  cursor: pointer;
+}
+
+.Terminal > .ui.segment.inverted > .ui.list > .navItem:hover {
+  background: #1d212b;
+  padding-left: 2px;
+  border-radius: 2px;
+}
+
+.Terminal > .ui.segment.inverted > .content > div {
+  margin-bottom: .5em;
+}
+
+.Terminal .currentPath {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.Terminal .meta {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }

@@ -44,7 +44,7 @@ export default class ContactCard extends React.Component {
               <Icon name="star" /> Javascript + React
             </Label>
           </div>
-          <Divider />
+          <Divider horizontal>TLDR;</Divider>
           <p>
             <small>
               Lately, my focus has been
