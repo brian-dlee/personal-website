@@ -51,9 +51,9 @@ export default class ContactCard extends React.Component {
             Although, I consider myself a web developer,
             I've had significant professional experience
             with large scale apps across the entire
-            stack (backend processing (notably, image and geospatial
-            data processing), frontend development, and
-            database and Linux system administration and design.
+            stack (image and geospatial data backend processing, 
+            frontend development, and database and Linux system 
+            administration and design.
           </p>
           <p>
             More recently, my focus and passion has been

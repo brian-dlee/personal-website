@@ -13,7 +13,10 @@ class App extends Component {
     fullscreen: false
   };
 
-  toggleFullscreen = () => this.setState({ fullscreen: !this.state.fullscreen });
+  toggleFullscreen = () => {
+    window.scrollTo(0, 0);
+    this.setState({ fullscreen: !this.state.fullscreen });
+  }
 
   render() {
     const { fullscreen } = this.state;
