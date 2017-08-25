@@ -14,7 +14,9 @@ class App extends Component {
   };
 
   toggleFullscreen = () => {
-    window.scrollTo(0, 0);
+    if (!this.state.fullscreen)
+      window.scrollTo(0, 0);
+
     this.setState({ fullscreen: !this.state.fullscreen });
   }
 
