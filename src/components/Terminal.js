@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Icon, List, Segment } from 'semantic-ui-react';
+import { Button, Icon, List, Segment } from 'semantic-ui-react';
+
+import { isDesktop } from '../utilities/device-detection';
 import Cursor from './Cursor';
 import Prompt from './Prompt';
 
@@ -10,7 +12,8 @@ const colors = {
   green: '#5d9165',
   yellow: '#bbba30',
   purple: '#a36aca',
-  blue: '#4384ec'
+  blue: '#4384ec',
+  red: '#b4303d',
 };
 
 const getRandomTime = () => Math.random() * 50;
@@ -22,7 +25,8 @@ class Terminal extends Component {
     this.state = {
       fullText: '',
       displayedText: '',
-      menuItem: []
+      menuItem: [],
+      fullscreen: false,
     };
   }
 
@@ -63,7 +67,13 @@ class Terminal extends Component {
     if (menuItem.length > 0)
       items.push(
         <List.Item className="navItem" key="back" onClick={() => this.onMenuItemClick('back')}>
-          <a>..</a>
+          <a>
+            <Icon
+              style={{color: colors.grey}}
+              size="small"
+              name="arrow left" />
+            ..
+          </a>
         </List.Item>
       );
 
@@ -72,10 +82,13 @@ class Terminal extends Component {
         items.push(
           <List.Item className="navItem" key={item} onClick={() => this.onMenuItemClick(item)}>
             <a>
-              {selected[item].starred && <Icon name="star" />}
+              <Icon
+                size="small"
+                style={{color: selected[item].starred ? colors.red : colors.grey }}
+                name={selected[item].starred ? "star" : "circle outline"} />
               {item}
               <i style={{color: colors.green}}>
-                {selected[item].lang && `[${selected[item].lang.join(', ')}]`}
+                <small>{selected[item].lang && ` - ${selected[item].lang.join(', ')}`}</small>
               </i>
             </a>
           </List.Item>
@@ -120,7 +133,7 @@ class Terminal extends Component {
 
   render() {
     const { menuItem, displayedText, url, lang } = this.state;
-    const { menu } = this.props;
+    const { menu, fullscreen, onFullscreenClick } = this.props;
 
     const promptLines = displayedText.split(/\n/);
     let content = [];
@@ -167,8 +180,21 @@ class Terminal extends Component {
     }
 
     return (
-      <div className="Terminal">
-        <Segment inverted raised>
+      <div className={`Terminal ${fullscreen ? 'fullscreen' : ''}`}>
+        <Segment attached="top" compact inverted>
+        <Button
+          floated="right"
+          size="mini"
+          circular
+          compact
+          inverted
+          color="black"
+          onClick={onFullscreenClick}
+          className="screenSize"
+          icon={fullscreen ? 'compress' : 'expand'}
+        />
+        </Segment>
+        <Segment className="body" attached="bottom" inverted raised size={isDesktop() ? 'large' : 'tiny'}>
           {currentPath && <div className="currentPath">{currentPath}</div>}
           {meta.length > 0 && <div className="meta">{meta}</div>}
           {content.length > 0 && <div className="content">{content}</div>}

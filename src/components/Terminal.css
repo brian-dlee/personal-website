@@ -1,15 +1,35 @@
 .Terminal {
   /* margin-top: 2em; */
   border-radius: 2px;
-  border: 2px solid #12141c;
   height: 100%;
   box-sizing: border-box;
 }
 
-.Terminal .logo {
-  position: absolute;
-  top: 1em;
-  right: 1em;
+.Terminal.fullscreen {
+  position: fixed;
+  top: 2em;
+  height: 80%;
+  left: 50%;
+  width: 75%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.Terminal > .ui.segment.attached.inverted:first-child {
+  border-bottom: none;
+  padding: .25em .5em .5em 0;
+  background: #250037;
+}
+
+.Terminal > .ui.segment.attached.inverted:first-child > .ui.button {
+  padding: 5px;
+}
+
+.Terminal > .ui.segment.attached.inverted {
+  border-color: #555;
+  margin: 0 -1px -1px;
+  box-shadow: none !important;
+  font-weight: 700;
 }
 
 .Terminal > .ui.segment.inverted {
@@ -21,8 +41,11 @@
   background: -webkit-linear-gradient(-45deg,  #0B0C10 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(135deg,  #0B0C10 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0B0C10', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  height: 100%;
   overflow-y: auto;
+}
+
+.Terminal > .body.ui.segment.inverted {
+  height: 100%;
 }
 
 .Terminal > .ui.segment.inverted > .ui.list > .navItem {

@@ -6,11 +6,12 @@ export default class SocialMediaList extends React.Component {
     const { items } = this.props;
 
     return (
-      <List className="socialLinks" horizontal>
+      <List className="socialLinks" horizontal size="huge">
         {
           items && Object.keys(items).map(item =>
             <Popup
               key={item}
+              position="top center"
               trigger={(
                 <List.Item>
                   <a href={items[item].url}>

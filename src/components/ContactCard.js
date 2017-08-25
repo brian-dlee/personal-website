@@ -2,6 +2,7 @@ import React from 'react';
 import { Divider, Icon, Image, Segment, Label } from 'semantic-ui-react';
 
 import SocialMediaList from './SocialMediaList';
+import { isDesktop } from '../utilities/device-detection';
 
 import './ContactCard.css';
 
@@ -13,6 +14,7 @@ export default class ContactCard extends React.Component {
       <div className="ContactCard">
         <h2>Brian Lee</h2>
         <Image
+          size={isDesktop() ? 'medium' : 'small'}
           shape="circular"
           centered
           src={gravatarSrc}
@@ -46,12 +48,10 @@ export default class ContactCard extends React.Component {
           </div>
           <Divider horizontal>TLDR;</Divider>
           <p>
-            <small>
-              Lately, my focus has been
-              PWA development using React, but I'm looking forward to
-              getting more involved cutting-edge web technologies
-              like AI and applications using WebGL.
-            </small>
+            Lately, my focus has been
+            PWA development using React, but I'm looking forward to
+            getting more involved cutting-edge web technologies
+            like AI and applications using WebGL.
           </p>
         </Segment>
       </div>
