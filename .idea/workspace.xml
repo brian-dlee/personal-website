@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4e3dc22-e212-49c7-aaaf-1e1895419f75" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Terminal.css" afterPath="$PROJECT_DIR$/src/components/Terminal.css" />
-    </list>
+    <list default="true" id="c4e3dc22-e212-49c7-aaaf-1e1895419f75" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +107,7 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="62" lean-forward="true" selection-start-line="0" selection-start-column="62" selection-end-line="0" selection-end-column="62" />
+              <caret line="0" column="149" lean-forward="true" selection-start-line="0" selection-start-column="149" selection-end-line="0" selection-end-column="149" />
               <folding />
             </state>
           </provider>
@@ -361,7 +357,7 @@
       <updated>1499622457276</updated>
       <workItem from="1499622458387" duration="24070000" />
       <workItem from="1503532926544" duration="18198000" />
-      <workItem from="1503624862750" duration="5492000" />
+      <workItem from="1503624862750" duration="5709000" />
     </task>
     <task id="LOCAL-00001" summary="Updated site title logos and all profile pane">
       <created>1503554053628</created>
@@ -381,7 +377,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47760000" />
+    <option name="totallyTimeSpent" value="47977000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="977" extended-state="6" />
@@ -711,7 +707,7 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="62" lean-forward="true" selection-start-line="0" selection-start-column="62" selection-end-line="0" selection-end-column="62" />
+          <caret line="0" column="149" lean-forward="true" selection-start-line="0" selection-start-column="149" selection-end-line="0" selection-end-column="149" />
           <folding />
         </state>
       </provider>

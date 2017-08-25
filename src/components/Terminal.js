@@ -16,7 +16,7 @@ const colors = {
   red: '#b4303d',
 };
 
-const getRandomTime = () => Math.random() * 50;
+const getRandomTime = () => Math.random() * 10 + 10;
 
 class Terminal extends Component {
   constructor() {

@@ -48,7 +48,15 @@ export default class ContactCard extends React.Component {
           </div>
           <Divider horizontal>TLDR;</Divider>
           <p>
-            Lately, my focus has been
+            Although, I consider myself a web developer,
+            I've had significant professional experience
+            with large scale apps across the entire
+            stack (backend processing (notably, image and geospatial
+            data processing), frontend development, and
+            database and Linux system administration and design.
+          </p>
+          <p>
+            More recently, my focus and passion has been
             PWA development using React, but I'm looking forward to
             getting more involved cutting-edge web technologies
             like AI and applications using WebGL.

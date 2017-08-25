@@ -30,10 +30,10 @@ class App extends Component {
         </div>
         <Container className="App-body">
           <Grid stackable>
-            <Grid.Column width={4}>
+            <Grid.Column width={5}>
               <ContactCard />
             </Grid.Column>
-            <Grid.Column width={12}>
+            <Grid.Column width={11}>
               <Terminal
                 onFullscreenClick={this.toggleFullscreen}
                 fullscreen={fullscreen}
