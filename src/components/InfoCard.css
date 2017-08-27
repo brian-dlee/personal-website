@@ -1,0 +1,16 @@
+.InfoCard h2 {
+  color: white;
+  text-align: center;
+}
+
+.InfoCard .content .title {
+  margin: 0;
+}
+
+.InfoCard .content {
+  text-align: center;
+}
+
+.InfoCard .profileImage {
+  margin-bottom: 1em;
+}

@@ -1,62 +1,34 @@
 .Terminal {
   border-radius: 2px;
-  box-sizing: border-box;
 }
 
-.Terminal.fullscreen {
-  position: fixed;
-  top: 2em;
-  height: 80%;
-  left: 50%;
-  width: 75%;
-  transform: translateX(-50%);
-  z-index: 1000;
+.Terminal > .terminalPlaceholder {
+  visibility: hidden;
+  position: absolute;
 }
 
-.Terminal > .ui.segment.attached.inverted:first-child {
-  border-bottom: none;
-  padding: .25em .5em .5em 0;
-  background: #250037;
-}
-
-.Terminal > .ui.segment.attached.inverted:first-child > .ui.button {
-  padding: 5px;
-}
-
-.Terminal > .ui.segment.attached.inverted {
-  border-color: #555;
-  margin: 0 -1px -1px;
+.Terminal .ui.segment.attached.inverted {
+  border-color: rgba(0, 0, 0, 0);
   box-shadow: none !important;
   font-weight: 700;
-}
-
-.Terminal > .ui.segment.inverted {
   color: #81b3b9;
   border-radius: 2px;  
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#12141c+0,000000+100 */
-  background: #0B0C10; /* Old browsers */
-  background: -moz-linear-gradient(-45deg,  #0B0C10 0%, #000000 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg,  #0B0C10 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg,  #0B0C10 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0B0C10', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background: #23252b;
   overflow-y: auto;
+  margin: 0;
 }
 
-.Terminal > .body.ui.segment.inverted {
-  height: 100%;
-}
-
-.Terminal > .ui.segment.inverted > .ui.list > .navItem {
+.Terminal .ui.segment.inverted > .ui.list > .navItem {
   cursor: pointer;
 }
 
-.Terminal > .ui.segment.inverted > .ui.list > .navItem:hover {
+.Terminal .ui.segment.inverted > .ui.list > .navItem:hover {
   background: #1d212b;
   padding-left: 2px;
   border-radius: 2px;
 }
 
-.Terminal > .ui.segment.inverted > .content > div {
+.Terminal .ui.segment.inverted > .content > div {
   margin-bottom: .5em;
 }
 

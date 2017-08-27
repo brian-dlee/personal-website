@@ -1,12 +1,14 @@
 import React from 'react';
 import { Icon, List, Popup } from 'semantic-ui-react';
 
+import './SocialMediaList.css';
+
 export default class SocialMediaList extends React.Component {
   render() {
     const { items } = this.props;
 
     return (
-      <List className="socialLinks" horizontal size="huge">
+      <List className="SocialMediaList" horizontal size="huge">
         {
           items && Object.keys(items).map(item =>
             <Popup

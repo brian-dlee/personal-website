@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Icon, List, Segment } from 'semantic-ui-react';
+import { Icon, List, Segment } from 'semantic-ui-react';
 
 import { isDesktop } from '../utilities/device-detection';
 import Cursor from './Cursor';
@@ -16,17 +16,34 @@ const colors = {
   red: '#b4303d',
 };
 
-const getRandomTime = () => Math.random() * 10 + 10;
+const getPromptLines = text => {
+  const lines = text.split('\n');
+
+  return lines.map((line, i) => {
+    if (line.trim().length === 0) return null;
+
+    return (
+      <div key={'promptLine' + i}>
+        <code><Prompt/>{line}{lines.length - 1 === i ? <Cursor/> : ''}</code>
+      </div>
+    );
+  }).filter(line => !!line);
+};
+const getRandomTime = () => Math.random() * 10;
 
 class Terminal extends Component {
   constructor() {
     super();
 
+    this.terminal = null;
+    this.invisibleTerminal = null;
+    this.terminalContentBottom = null;
+
     this.state = {
       fullText: '',
-      displayedText: '',
+      charCount: 0,
       menuItem: [],
-      fullscreen: false,
+      autoscroll: false
     };
   }
 
@@ -48,15 +65,15 @@ class Terminal extends Component {
       lang: selected.lang,
       url: selected.url,
       fullText: selected.text || 'Select an option below to read more.',
-      displayedText: ''
+      charCount: 0,
     },
     this.setShellUpdateTimeout());
   };
 
-  displayMenu() {
-    const { fullText, displayedText, menuItem } = this.state;
+  getMenuMaybe(force=false) {
+    const { fullText, charCount, menuItem } = this.state;
 
-    if (fullText.length !== displayedText.length)
+    if (!force && fullText.length !== charCount - 1)
       return;
 
     let selected = { ...this.props.menu };
@@ -111,13 +128,13 @@ class Terminal extends Component {
   }
 
   writeNextCharacter() {
+    const newCharCount = this.state.charCount + 1;
+
     this.setState({
-      displayedText: this.state.fullText.slice(0, this.charCount)
+      charCount: newCharCount
     });
 
-    this.charCount++;
-
-    if (this.charCount <= this.state.fullText.length) {
+    if (newCharCount <= this.state.fullText.length) {
       this.setShellUpdateTimeout();
     }
   }
@@ -125,18 +142,20 @@ class Terminal extends Component {
   componentDidMount() {
     this.charCount = 0;
 
-    this.setState({
-      fullText: this.props.greeting
-    }, () => this.setShellUpdateTimeout()
+    this.setState(
+      {
+        fullText: this.props.greeting
+      },
+      () => this.setShellUpdateTimeout()
     );
   }
 
   render() {
-    const { menuItem, displayedText, url, lang } = this.state;
-    const { menu, fullscreen, onFullscreenClick } = this.props;
+    const { menuItem, fullText, charCount, url, lang } = this.state;
+    const { menu } = this.props;
 
-    const promptLines = displayedText.split(/\n/);
-    let content = [];
+    const shownPromptLines = getPromptLines(fullText.slice(0, charCount));
+    const allPromptLines = getPromptLines(fullText);
     let meta = [];
     let currentPath = null;
 
@@ -166,40 +185,29 @@ class Terminal extends Component {
         </div>
       );
 
-    for (let i = 0; i < promptLines.length; i++) {
-      const line = promptLines[i];
-
-      if (line.trim().length === 0)
-        continue;
-
-      content.push(
-        <div key={'promptLine' + i}>
-          <code><Prompt />{line}{promptLines.length - 1 === i ? <Cursor /> : ''}</code>
-        </div>
-      );
-    }
-
     return (
-      <div className={`Terminal ${fullscreen ? 'fullscreen' : ''}`}>
-        <Segment attached="top" compact inverted>
-        <Button
-          floated="right"
-          size="mini"
-          circular
-          compact
-          inverted
-          color="black"
-          onClick={onFullscreenClick}
-          className="screenSize"
-          icon={fullscreen ? 'compress' : 'expand'}
-        />
-        </Segment>
-        <Segment className="body" attached="bottom" inverted raised size={isDesktop() ? 'large' : 'tiny'}>
-          {currentPath && <div className="currentPath">{currentPath}</div>}
-          {meta.length > 0 && <div className="meta">{meta}</div>}
-          {content.length > 0 && <div className="content">{content}</div>}
-          {this.displayMenu()}
-        </Segment>
+      <div className='Terminal'>
+        <div className="terminalPlaceholder" ref={ref => this.invisibleTerminal = ref}>
+          <Segment size={isDesktop() ? 'large' : 'small'}>
+            {currentPath && <div className="currentPath">{currentPath}</div>}
+            {meta.length > 0 && <div className="meta">{meta}</div>}
+            {allPromptLines.length > 0 && <div className="content">{allPromptLines}</div>}
+            {this.getMenuMaybe(true)}
+          </Segment>
+        </div>
+        <div className="terminalBody" ref={ref => this.terminal = ref}>
+          <Segment
+            inverted
+            raised
+            size={isDesktop() ? 'large' : 'small'}
+            style={{minHeight: this.invisibleTerminal ? this.invisibleTerminal.scrollHeight : 0}}>
+            {currentPath && <div className="currentPath">{currentPath}</div>}
+            {meta.length > 0 && <div className="meta">{meta}</div>}
+            {shownPromptLines.length > 0 && <div className="content">{shownPromptLines}</div>}
+            {this.getMenuMaybe()}
+            <span ref={ref => this.terminalContentBottom = ref} />
+          </Segment>
+        </div>
       </div>
     );
   }
