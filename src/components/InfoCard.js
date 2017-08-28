@@ -14,20 +14,22 @@ export default class InfoCard extends React.Component {
               <Icon name="star" /> Javascript + React
             </Label>
           </div>
-          <Divider horizontal>TLDR;</Divider>
+          <Divider horizontal>TL;DR</Divider>
           <p>
-            Although, I consider myself a web developer,
-            I've had significant professional experience
+            I love software development - a field that infuses critical-thinking
+            and expression into one. I put everything I have
+            into my projects with an obsession for going the extra mile.
+            I have significant professional experience
             with large scale apps across the entire
-            stack (image and geospatial data backend processing, 
+            stack including image and geospatial data processing,
             frontend development, and database and Linux system 
-            administration and design.
+            administration/design.
           </p>
           <p>
-            More recently, my focus and passion has been
-            PWA development using React, but I'm looking forward to
+            My focus and passion is web development and lately PWA
+            development using React. I am looking forward to
             getting more involved cutting-edge web technologies
-            like AI and applications using WebGL.
+            such as AI and applications using WebGL.
           </p>
         </Segment>
       </div>

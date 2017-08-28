@@ -107,8 +107,8 @@ export default {
     'Game Development': {
       starred: true,
       text: "Games have always been a passion of mine. In my free time, I've been gaining more experience in " +
-      "game development. My experience is primarily with Unity but I've also had my eyes on developing games " +
-      "using the Unreal Engine and even plain Javascript/WebGL."
+      "game development and design. My experience is primarily with Unity but I've also had my eyes on " +
+      "developing games using the Unreal Engine and even plain Javascript/WebGL."
     }
   }
 };
