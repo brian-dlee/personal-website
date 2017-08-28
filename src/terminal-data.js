@@ -98,12 +98,14 @@ export default {
   },
   'Interests': {
     'AI': {
+      starred: true,
       text: "Although this has always been a field that has intrigued me, my interests grew during the CS " +
       "program at UNLV when I took an elective on AI. AI has already proven to be an incredible " +
       "technology changing the pace of software today. This is one field I've had my eyes on for a while and " +
       "I would love the opportunity to be more involved in."
     },
     'Game Development': {
+      starred: true,
       text: "Games have always been a passion of mine. In my free time, I've been gaining more experience in " +
       "game development. My experience is primarily with Unity but I've also had my eyes on developing games " +
       "using the Unreal Engine and even plain Javascript/WebGL."
