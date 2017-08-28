@@ -16,7 +16,7 @@ export default class InfoCard extends React.Component {
           </div>
           <Divider horizontal>TL;DR</Divider>
           <p>
-            I love software development - a field that infuses critical-thinking
+            I love software development - a field that fuses critical-thinking
             and expression into one. I put everything I have
             into my projects with an obsession for going the extra mile.
             I have significant professional experience
