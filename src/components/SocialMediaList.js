@@ -17,7 +17,7 @@ export default class SocialMediaList extends React.Component {
               trigger={(
                 <List.Item>
                   <a href={items[item].url}>
-                    <Icon inverted name={item} />
+                    <Icon fitted inverted name={item} />
                   </a>
                 </List.Item>
               )}
