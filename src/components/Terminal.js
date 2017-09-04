@@ -4,7 +4,6 @@ import { Icon, List, Segment } from 'semantic-ui-react';
 import { isDesktop } from '../utilities/device-detection';
 import Cursor from './Cursor';
 import Prompt from './Prompt';
-import { pluck } from '../utilities/object-helper';
 
 import './Terminal.css';
 
@@ -93,7 +92,7 @@ class Terminal extends Component {
     return <List>{items}</List>;
   };
 
-  getMenuMaybe(force=false) {
+  getMenuMaybe = (force=false) => {
     const { menuItem } = this.state;
 
     if (!force && !this.readyToShowMenus())
@@ -107,17 +106,6 @@ class Terminal extends Component {
       selected,
       menuItem.length > 0,
       'Navigation'
-    );
-  }
-
-  getStarredItemsMaybe = (force) => {
-    if ((!force && !this.readyToShowMenus()) || this.state.menuItem.length !== 0) return null;
-
-    return this.buildNavMenu(
-      pluck(this.props.menu, i => !!i.text, i => i.starred),
-      false,
-      'Featured',
-      { color: colors.yellow }
     );
   };
 
@@ -220,8 +208,7 @@ class Terminal extends Component {
             {currentPath && <div className="currentPath">{currentPath}</div>}
             {meta.length > 0 && <div className="meta">{meta}</div>}
             {allPromptLines.length > 0 && <div className="content">{allPromptLines}</div>}
-            {this.getStarredItemsMaybe()}
-            {this.getMenuMaybe()}
+            {this.getMenuMaybe(true)}
           </Segment>
         </div>
         <div className="terminalBody" ref={ref => this.terminal = ref}>
@@ -233,7 +220,6 @@ class Terminal extends Component {
             {currentPath && <div className="currentPath">{currentPath}</div>}
             {meta.length > 0 && <div className="meta">{meta}</div>}
             {shownPromptLines.length > 0 && <div className="content">{shownPromptLines}</div>}
-            {this.getStarredItemsMaybe()}
             {this.getMenuMaybe()}
           </Segment>
         </div>
