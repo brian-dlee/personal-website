@@ -1,5 +1,5 @@
 export default {
-  'Active Javascript Projects': {
+  'Active javascript projects': {
     'brian-dlee.surge.sh (this site)': {
       starred: true,
       lang: ['Javascript (es6/React)'],
@@ -28,8 +28,8 @@ export default {
         "application, I've developed two packages: a SegmentedForm component which allows " +
         "the user to breakdown large forms into small pieces that are especially useful on " +
         "mobile devices (the app was written to be used heavily on iPod touches), and " +
-        "a form validation package. I hope to be able to share the source code on both " +
-        "of these packages very soon. I am unable to show the source code for the app itself.",
+        "a form validation package.",
+      url: 'https://gitlab.com/nellisauction/cargo'
     },
     'iOS Inventory Manager': {
       starred: true,
