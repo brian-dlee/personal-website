@@ -1,6 +1,13 @@
 .App .App-header {
-  padding: .5em;
+  padding: .25em;
   background: #eaeaea;
+  height: 40px;
+  box-sizing: content-box;
+}
+
+.App .App-header img {
+  height: 40px;
+  width: auto;
 }
 
 .App .App-body {

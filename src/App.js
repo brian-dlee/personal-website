@@ -15,21 +15,21 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <Container>
-            <img width="40" className="logo" src={logo} alt="Logo" />
+            <img className="logo" src={logo} alt="Logo" />
           </Container>
         </div>
         <Container className="App-body">
           <Grid stackable>
-            <Grid.Row>
-              <Grid.Column width={16}>
+            <Grid.Row columns={2}>
+              <Grid.Column width={6}>
                 <Profile />
               </Grid.Column>
-            </Grid.Row>
-            <Grid.Row stretched>
-              <Grid.Column width={5}>
+              <Grid.Column width={10} stretched verticalAlign="middle">
                 <InfoCard />
               </Grid.Column>
-              <Grid.Column width={11}>
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Column>
                 <Terminal
                   greeting={'Hello! Read more on some of the work I\'ve done throughout my career by following a path below.'}
                   menu={data}
