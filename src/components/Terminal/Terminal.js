@@ -9,16 +9,10 @@ import TerminalNavMenu from "../TerminalNavMenu";
 import "./Terminal.css";
 
 class Terminal extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.placeholder = null;
-  }
-
   getMenuMaybe(force = false) {
-    const { menu, menuItem } = this.props;
+    const { charCount, fullText, menu, menuItem } = this.props;
 
-    if (!force && !this.readyToShowMenus()) {
+    if (!force && fullText.length > charCount - 1) {
       return;
     }
 
@@ -33,10 +27,6 @@ class Terminal extends React.Component {
         onClick={this.onMenuItemClick}
       />
     );
-  }
-
-  readyToShowMenus() {
-    return this.props.fullText.length <= this.props.charCount - 1;
   }
 
   onMenuItemClick = item => {
@@ -54,28 +44,14 @@ class Terminal extends React.Component {
 
   render() {
     const { menuItem, fullText, charCount, url, lang } = this.props;
-    const shownPromptLines = (
-      <TerminalContent>{fullText.slice(0, charCount)}</TerminalContent>
-    );
-    const allPromptLines = <TerminalContent>{fullText}</TerminalContent>;
     const meta = <Meta path={menuItem} url={url} lang={lang} />;
 
     return (
       <div className="Terminal">
-        <TerminalBody
-          className="terminalPlaceholder"
-          containerRef={ref => (this.placeholder = ref)}
-          menu={this.getMenuMaybe(true)}
-          meta={meta}
-        >
-          {allPromptLines}
-        </TerminalBody>
-        <TerminalBody
-          menu={this.getMenuMaybe()}
-          meta={meta}
-          height={this.placeholder ? this.placeholder.scrollHeight : 0}
-        >
-          {shownPromptLines}
+        <TerminalBody menu={this.getMenuMaybe()} meta={meta}>
+          <TerminalContent visibleLength={charCount}>
+            {fullText}
+          </TerminalContent>
         </TerminalBody>
       </div>
     );

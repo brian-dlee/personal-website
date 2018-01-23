@@ -1,0 +1,4 @@
+.prompt-line.hidden,
+.prompt-line .hidden {
+  visibility: hidden;
+}

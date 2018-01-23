@@ -18,8 +18,8 @@ const TerminalBody = ({
   return (
     <div className={className} ref={ref => containerRef(ref)} style={style}>
       <Segment inverted raised size={isDesktop() ? "large" : "small"}>
-        {meta.length > 0 && <div className="meta">{meta}</div>}
-        <div className="content">{children}</div>
+        {meta}
+        {children}
         {menu}
       </Segment>
     </div>

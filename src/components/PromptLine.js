@@ -4,11 +4,14 @@ import PropTypes from "prop-types";
 import Cursor from "./Cursor";
 import Prompt from "./Prompt";
 
-const PromptLine = ({ children, showCursor }) => (
-  <div>
+import "./PromptLine.css";
+
+const PromptLine = ({ hidden, showCursor, visible }) => (
+  <div className={`prompt-line ${visible.trim().length === 0 && "hidden"}`}>
     <code>
       <Prompt />
-      {children}
+      <span className="visible">{visible}</span>
+      <span className="hidden">{hidden}</span>
       {showCursor ? <Cursor /> : ""}
     </code>
   </div>
@@ -19,8 +22,9 @@ PromptLine.defaultProps = {
 };
 
 PromptLine.propTypes = {
-  children: PropTypes.node.isRequired,
-  showCursor: PropTypes.bool
+  hidden: PropTypes.string.isRequired,
+  showCursor: PropTypes.bool,
+  visible: PropTypes.string.isRequired
 };
 
 export default PromptLine;
