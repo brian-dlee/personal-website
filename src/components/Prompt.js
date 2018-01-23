@@ -1,18 +1,12 @@
-import React, { Component } from 'react';
-import { Icon } from 'semantic-ui-react';
+import React from "react";
+import { Icon } from "semantic-ui-react";
 
-import { colors } from './Terminal';
+import colors from "../theme/colors";
 
-class Prompt extends Component {
-  render() {
-    const promptSymbol = <Icon style={{color: colors.blue}} name="angle right"/>
-
-    return (
-      <code>
-        {promptSymbol}
-      </code>
-    );
-  }
-}
+const Prompt = () => (
+  <code>
+    <Icon style={{ color: colors.blue }} name="angle right" />
+  </code>
+);
 
 export default Prompt;

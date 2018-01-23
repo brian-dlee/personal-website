@@ -1,13 +1,8 @@
-import React, { Component } from 'react';
+import React from "react";
+import colors from "../theme/colors";
 
-class Cursor extends Component {
-  render() {
-    const style = {
-      color: '#fefefe'
-    };
-
-    return <code className="cursor" style={style} />
-  }
-}
+const Cursor = () => (
+  <code className="cursor" style={{ color: colors.white }} />
+);
 
 export default Cursor;
