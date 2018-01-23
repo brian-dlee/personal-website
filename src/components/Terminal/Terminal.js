@@ -9,10 +9,10 @@ import TerminalNavMenu from "../TerminalNavMenu";
 import "./Terminal.css";
 
 class Terminal extends React.Component {
-  getMenuMaybe(force = false) {
+  getMenuMaybe() {
     const { charCount, fullText, menu, menuItem } = this.props;
 
-    if (!force && fullText.length > charCount - 1) {
+    if (fullText.length > charCount - 1) {
       return;
     }
 

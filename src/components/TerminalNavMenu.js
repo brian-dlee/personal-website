@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { List } from "semantic-ui-react";
-import { compose, mapObjIndexed, values } from "ramda";
+import { compose, map, sortBy, toPairs, values } from "ramda";
 
 import TerminalNavHeader from "./TerminalNavHeader";
 import TerminalNavItem from "./TerminalNavItem";
@@ -9,16 +9,18 @@ import TerminalNavItem from "./TerminalNavItem";
 const TerminalNavMenu = ({ showBack, menuItems, onClick }) => {
   const buildMenuItemComponents = compose(
     values,
-    mapObjIndexed(({ lang, starred }, title) => (
+    map(pair => (
       <TerminalNavItem
-        onClick={() => onClick(title)}
-        key={title}
-        lang={lang}
-        type={starred ? "star" : "circle"}
+        onClick={() => onClick(pair[0])}
+        key={pair[0]}
+        lang={pair[1].lang}
+        type={pair[1].starred ? "star" : "circle"}
       >
-        {title}
+        {pair[0]}
       </TerminalNavItem>
-    ))
+    )),
+    sortBy(pair => (pair[1].starred ? "0" : "1") + pair[0].toLowerCase()),
+    toPairs
   );
 
   return (
