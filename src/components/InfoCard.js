@@ -17,14 +17,17 @@ const InfoCard = () => (
         I love software development - a field that fuses critical-thinking and
         expression into one. I put everything I have into my projects with an
         obsession for going the extra mile. I have significant professional
-        experience with large scale apps across the entire stack including image
-        and geospatial data processing, frontend development, and database and
-        Linux system administration/design.
+        experience with large scale apps across the entire stack including
+        complex data processing, frontend development, and database and Linux
+        system administration/design.
       </p>
       <p>
-        My focus and passion is web development and lately PWA development using
-        React. I am looking forward to getting more involved cutting-edge web
-        technologies such as AI and applications using WebGL.
+        My focus and passion is web development. Recently, I have been intrigued
+        by PWA development using React and the different unique ways of
+        implementating an application backend like serverless cloud
+        implementations and headless CMSs. I am looking forward to getting more
+        involved cutting-edge web technologies in realms like AI and intensive
+        graphic processing using WebGL.
       </p>
     </Segment>
   </div>
