@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import colors from "../theme/colors";
 
 const LanguagesTag = ({ lang }) => (
-  <div key={"promptLine-1"}>
+  <div className="languages">
     <code style={{ color: colors.green }}>Languages: {lang.join(", ")}</code>
   </div>
 );

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import colors from "../theme/colors";
 
 const SourceLink = ({ url }) => (
-  <div key={"promptLine-2"}>
+  <div className="source-link">
     <code style={{ color: colors.purple }}>
       URL: <a href={url}>{url}</a>
     </code>
