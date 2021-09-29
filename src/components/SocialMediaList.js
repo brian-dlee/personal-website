@@ -13,7 +13,7 @@ const SocialMediaList = ({ items }) => (
           position="top center"
           trigger={
             <List.Item>
-              <a target="_blank" href={items[item].url}>
+              <a target="_blank" rel="noreferrer" href={items[item].url}>
                 <Icon fitted inverted name={item} />
               </a>
             </List.Item>

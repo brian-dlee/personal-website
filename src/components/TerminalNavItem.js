@@ -25,7 +25,7 @@ const getIcon = type => {
 
 const TerminalNavItem = ({ children, lang, type, onClick }) => (
   <List.Item className="navItem" onClick={onClick}>
-    <a>
+    <a href={`#item-${type}`}>
       <Icon
         size="small"
         style={{ color: getColor(type) }}

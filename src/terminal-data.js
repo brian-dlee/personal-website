@@ -1,4 +1,4 @@
-export default {
+const data = {
   "Open source projects": {
     "brian-dlee.surge.sh (this site)": {
       starred: true,
@@ -107,3 +107,5 @@ export default {
     }
   }
 };
+
+export default data
